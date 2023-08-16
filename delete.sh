@@ -9,7 +9,7 @@ function list_commands() {
 
 function delete_command() {
     if [ -z "$1" ]; then
-        echo "Usage: $0 delete --<command_name>"
+        echo "Usage: $0 --delete <command_name>"
         exit 1
     fi
 
