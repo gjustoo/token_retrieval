@@ -6,11 +6,16 @@ This cli command only works for api that return only the token as the response b
 
 ## Usage
 
-1. Clone this repository to your local machine:
+1. Download this [repository](https://github.com/gjustoo/token_retrieval.git) to your local machine:
 
    ```bash
-   git clone[https://github.com/your-username/token-command-generator.git](https://github.com/gjustoo/token_retrieval)
-   cd token_retrieval
+   wget https://github.com/gjustoo/token_retrieval/archive/refs/heads/master.zip -O token_retrieval.zip
+   ```
+   ```bash
+   unzip token_retrieval.zip
+   ```
+   ```bash
+    cd token_retrieval-master
    ```
 
 2. Make sure you have the necessary dependencies installed.
@@ -20,7 +25,7 @@ This cli command only works for api that return only the token as the response b
 3. Run the script to generate a token command. You need to provide the API URL, username, password, and a unique command name. Here's the basic usage:
 
    ```bash
-   ./generate_token_command.sh --api-url "https://api.example.com/token" --username "your_username" --password "your_password" --commandName "getToken"
+   ./command_creation.sh --api-url "https://api.example.com/token" --username "your_username" --password "your_password" --commandName "getToken"
    ```
 
    Replace the values with your specific API details.
@@ -31,12 +36,12 @@ This cli command only works for api that return only the token as the response b
 
    You can delete a generated command by running the delete.sh script. You need to provide the command name as an argument. Here's the basic usage:
 
-      ```bash
-      ./delete.sh --delete "getToken"
-      ```
+   ```bash
+   ./delete.sh --delete "getToken"
+   ```
    and to list created commands :
-      ```bash
-      ./delete.sh --list
+   ```bash
+   ./delete.sh --list
    ``` 
 
    Or you can delete a command manually : 
@@ -49,6 +54,7 @@ This cli command only works for api that return only the token as the response b
 - `--username <USERNAME>`: The username for authentication.
 - `--password <PASSWORD>`: The password for authentication.
 - `--commandName <NAME>`: The desired name for the generated command.
+- `--provenance <PROVENANCE>`: The provenance of the command.
 - `--force`: Use this option to reinstall a command if it already exists.
 
 ## Requirements
@@ -62,7 +68,7 @@ This cli command only works for api that return only the token as the response b
 Generate a command named `getMyToken` for an example API:
 
 ```bash
-./generate_token_command.sh --api-url "https://api.example.com/token" --username "your_username" --password "your_password" --commandName "getMyToken"
+./command_creation.sh --api-url "https://api.example.com/token" --username "your_username" --password "your_password" --commandName "getMyToken"
 ```
 
 ## License
